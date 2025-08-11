@@ -19,6 +19,10 @@
   font-style: normal;
 }
 
+@theme {
+  --font-doto: Rimba Andalas
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -217,16 +221,6 @@ main {
 
 }
 
-.img {
-  display: flex;
-  flex-direction: row;
-  gap: 0.5rem;
-}
-
-.pessoa {
-    width: 200px;
-    border-radius: 0.25rem;
-}
 
 
 

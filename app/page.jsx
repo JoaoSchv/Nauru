@@ -24,7 +24,7 @@ export default function Home() {
     <>
     
         <div className="overlay"></div>
-      </div>
+      <div>
       <header>
         <div className="navbar">
           <div className="logo">

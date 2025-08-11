@@ -7,6 +7,39 @@ import './sobrenos.css';
 
 export default function Sobrenos() {
 
+  const Equipe = [
+    {
+      name: 'Matheus Lozano',
+      role: 'gay',
+      imageUrl: '/matheus.jpeg',
+    },
+    {
+      name: 'Gabriel Ruis',
+      role: 'Autista',
+      imageUrl: '/gabriel.jpeg',
+    },
+    {
+      name: 'Diego Sugahara',
+      role: 'viado',
+      imageUrl: '/diego.jpeg',
+    },
+    {
+      name: 'João Schvengber',
+      role: 'homossexual',
+      imageUrl: '/joao.png',
+    },
+    {
+      name: 'Rafael Nascimento',
+      role: 'gostosinho',
+      imageUrl: '/rafael.jpeg',
+    },
+    {
+      name: 'Enzo Ferrari',
+      role: 'poc',
+      imageUrl: '/enzox.jpeg',
+    },
+  ];
+
   function toggleMenu() {
     const menu = document.querySelector(".dropdownMenu");
     if (menu.classList.contains("show")) {
@@ -73,20 +106,35 @@ export default function Sobrenos() {
           <div>
             <h1 className="titulo">Sobre-nós</h1>
             <p>Naurú foi um projeto de TCC do curso de Desenvolvimento de Sistemas na ETEC Martinho Di Ciero. </p>
-            <h1 className="titulo">Integrantes</h1>
+  
           </div>
         </section>
 
-        <section id="images">
-          <div className="img">
-            <Image className="pessoa" src="/matheus.jpeg" width={300} height={500} alt="VAI SE FODER"/>
-            <Image className="pessoa" src="/gabriel.jpeg" width={300} height={500} alt="VAI SE FODER"/>
-            <Image className="pessoa" src="/diego.jpeg" width={300} height={500} alt="VAI SE FODER"/>
-            <Image className="pessoa" src="/joao.png" width={300} height={500} alt="VAI SE FODER"/>
-            <Image className="pessoa" src="/rafael.jpeg" width={300} height={500} alt="VAI SE FODER"/>
-            <Image className="pessoa" src="/enzox.jpeg" width={300} height={500} alt="VAI SE FODER"/>
-          </div>
-        </section>
+        <section className="h-150 min-w-screen py-28 bg-transparent flex justify-center">
+      <div className="max-w-7xl mx-auto px-6 text-center">
+        <h2 className="text-6xl font-bold mb-4 font-doto">Nossa Equipe</h2>
+        <p className="text-white mb-24 ">
+          Conheça os bixas incríveis que estão por trás do nosso projeto.
+        </p>
+
+        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+          {Equipe.map((membro, index) => (
+            <div key={index} className="bg-white p-8 rounded-2xl shadow-lg h-60 w-60 flex flex-col items-center justify-center text-center ">
+              <div className="w-42.5 h-42.5 mx-auto mb-4 relative ">
+                <Image
+                  src={membro.imageUrl}
+                  alt={membro.name}
+                  fill
+                  className="rounded-full object-cover "
+                />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-800">{membro.name}</h3>
+              <p className="text-gray-500">{membro.role}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
       </main>
     </>
   );
